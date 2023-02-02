@@ -51,16 +51,69 @@
 收集更多的数据
 提高数据质量
 提高数据的代表性
+### numpy
+- np.zeros(10)
+- np.zeros(shape=(3,5),dtype=int)
+- np.ones(10) 十个1
+- np.full(shape=(3,5),fill_value=666) 3行5列的666
+- np.arange(0,20,2)
+- np.linspace(0,20,10) 从0到20 截除10个数 前壁后壁 都包含0，20
+- np.random.randint(0,10)
+- np.random.randint(0,10,size=[3,5]) 前壁后开的 有10个元素
+- np.random.seed(666) 随机种子可以让每次随机出来的数值是一样的
+- np.random.normal(10,100) 符合正态分布的随机浮点数
+- np.random? 可以直接查文档
+- np数组.reshape(2,5) 改变数组的为矩阵
+-- 合并操作 
+  - np.concatenate([x,y]) 两个np向量合并为一个向量
+  - np.concatenate([A,A],axis=1) 沿着列的方向合并拼接
+  - np.vstack([A,z]) 增加为行
+  - np.hstack([A,B]) 增加为列
+    
+-- 分隔操作
+    - x1,x2 = np.split(x,[5]) 分割0到5 和 分割 5之后
+    - x1,x2 = np.split(x,[5],axis=1) 矩阵可以按照列进行分割
+    - x1,x2 = np.vsplit
+    - x1,x2 = np.hsplit
+-- np的运算（universal functions）
+    - 可以对np的数组直接进行加减乘除
+    - np.linalg.inv(A) 为A的逆矩阵
+    - np.linalg.pinv(A) 可计算出非正方矩阵的逆矩阵（违逆矩阵）
+-- 聚合操作
+    - np.sum 或者向量.sum np.sum(X,axis=0) 求列和
+    - np.min np.argmin 最小值的索引位置
+    - np.max
+    - np.median() 中位数
+    - np.mean() 均值
+    - np.std() 标准差
+    - np.partition(x,3) 找出比3小的数据在左边 比3大的数据在右边
+-- fancy indexing
+    - np数组的比较 x<3 获取一个布尔数组的返回
+    - np.any 只要数组中有一个符合就返回true
+    - np.all 所有的都要满足
+### matplotlib
+    - import matplotlib.pyplot as plt
+    - plt.plot(x,y,color='red,linestyle='',xlabel,ylabel)
+    - plt.axis([x,x1,y,y1]) 调整x,y的范围 
+    - plt.xlabel("") 给x轴命名作用 
+    - plt.ylabel("") 写y轴命名命名
+    - plt.title() 添加标题
+    - plt.show()
+    - plt.scatter(x,y) 绘制散点图
+### 加载数据(sklean里的数据集合)
 ### KNN
 - 两个样本最相近的是哪个类别
 - k近邻算法是非常特殊的，可以被认为是没有模型的算法
 - 围栏和其他算法统一，可以认为训练数据集就是模型本身
+- from sklean.neighbors import KNeighborsClassfier
+- from sklean.model_selection import train_test_split
+- from sklean.metrics import accuracy_score
 #### 超参数
-- 概念：在算法运行前需要决定的参数
+- 概念：在算法运行前需要决定的参数 
 - 模型参数： 算法过程中学习的参数
 - knn算法没有模型参数
 - knn算法中的k是典型的超参数
-- 考虑距离的话 摸不一样
+- 考虑距离的话 模不一样(距离的倒数 红色：1 蓝色 :1/3+1/4 = 7/12 红色胜)
 - 距离的定义
 - - 欧拉距离
 - - 曼哈顿距离
@@ -72,12 +125,31 @@
 ##### 寻找好的超参数
 - 领域知识
 - 经验数值
-- 实验搜索
+- 实验搜索 如果寻找到的值是在我们定义范围内的边界的话 需要重新搜索
+###### 网格搜索最佳超参数（Grid search）
+param_grid = [
+    {
+        'weights':['uniform'],
+        'n_neighbors':[i for i in range(1,11)]
+    },
+    {
+        'weights':['distance'],
+        'n_neighbors':[i for i in range(1,11)],
+        'p':[i for i in range(1,6)],
+    }
+]
+from sklearn.model_selection import GridSearchCV
+grid_search = GridSearchCV(算法,param_grid,n_jobs) n_jobs 计算机多核处理 -1 自动取计算有几核 verbose
+grid_search.fit(x,y) 比较慢
+grid_search.best_estimator_ 返回最好的分类器
+grid_search.best_score_ 最好的分数
+grid_search.best_params_ 最好的参数
 ##### 数据归一化
 - 解决方案：将所有的数据映射到同一尺度
 - 最值归一化：把所有数据映射到0-1之间
-- 使用Xcale 适用于分布有明显边界的情况下，受outlier影响较大
-- 均值方差归一化 standerdization 把所有数据归一到均值为0方差为1的分布中
+- 使用Xcale 适用于分布有明显边界的情况下，受outlier影响较大 分数分值 和 图像像素的情况下
+- 均值方差归一化(改进方案) standerdization 把所有数据归一到均值为0方差为1的分布中 适用于（数据分布没有明显的边界；有可能存在极端数据值） 
+    （每个特征值 - 每个特征值的均值）/对应特征值的方
 ##### 缺点
 - 效率低下
 - 如果训练集有m个样本，n个特征 则预测每一个新的数据，需要O(M*N) 

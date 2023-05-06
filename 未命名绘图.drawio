@@ -1,9 +1,253 @@
-<mxfile host="app.diagrams.net" modified="2023-04-22T02:39:49.486Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" version="21.2.1" etag="wxXZ0zVivtLy0KulGiD5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-06T13:30:44.126Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="CYTKDDbKXkLL-DH5US2r" version="21.2.1" type="github">
   <diagram name="第 1 页" id="RTU96gUhtt4eI31wXxiF">
-    <mxGraphModel>
+    <mxGraphModel dx="1781" dy="550" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-2" value="&lt;pre style=&quot;font-family: Menlo; font-size: 9.8pt;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;DefaultMQPushConsumer&lt;/span&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="525" width="220" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-3" value="初始化消费者" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.oval_callout" vertex="1" parent="1">
+          <mxGeometry x="280" y="460" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-4" target="KX0J2xy1MLkIIlAIKuD9-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-8" value="实际调用构造方法" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KX0J2xy1MLkIIlAIKuD9-7">
+          <mxGeometry x="-0.0875" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-4" value="&lt;pre style=&quot;font-family: Menlo; font-size: 9.8pt;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;DefaultMQPushConsumerImpl&lt;/span&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="680" width="220" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-5" value="真正的实现，所有的构造方法的指向" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-2" target="KX0J2xy1MLkIIlAIKuD9-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="700" as="sourcePoint" />
+            <mxPoint x="440" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;dashed=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-6" target="KX0J2xy1MLkIIlAIKuD9-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-6" target="KX0J2xy1MLkIIlAIKuD9-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-6" value="&lt;pre style=&quot;font-family: Menlo; font-size: 9.8pt;&quot;&gt;&lt;pre style=&quot;font-family: Menlo; font-size: 9.8pt;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;DefaultMQPushConsumer(final String namespace, final String consumerGroup, RPCHook rpcHook,&lt;br&gt;    AllocateMessageQueueStrategy allocateMessageQueueStrategy) &lt;/span&gt;&lt;/pre&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="682.5" width="750" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-12" value="1.namespace默认为空&lt;br&gt;2.consumerGroup为传入参数&lt;br&gt;3.rpcHook为权限设置，不设置默认为空&lt;br&gt;4.AllocatemessageQueueStrategy为消费的策略，默认使用的是平均策略" style="shape=card;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="330" width="350" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.429;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-13" target="KX0J2xy1MLkIIlAIKuD9-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.568;entryY=-0.037;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-13" target="KX0J2xy1MLkIIlAIKuD9-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-21" value="两种实现方法" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KX0J2xy1MLkIIlAIKuD9-19">
+          <mxGeometry x="-0.9003" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-13" value="defaultMQPushConsumerImpl.start()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="820" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-14" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-6" target="KX0J2xy1MLkIIlAIKuD9-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="810" as="sourcePoint" />
+            <mxPoint x="370" y="760" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="370" y="810" />
+              <mxPoint x="320" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-15" value="启动方法" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KX0J2xy1MLkIIlAIKuD9-14">
+          <mxGeometry x="0.087" y="-12" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-16" target="KX0J2xy1MLkIIlAIKuD9-26">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-30" value="线程池中执行方法" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KX0J2xy1MLkIIlAIKuD9-27">
+          <mxGeometry x="-0.1333" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-31" value="线程池中执行方法" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KX0J2xy1MLkIIlAIKuD9-27">
+          <mxGeometry x="0.869" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-16" target="KX0J2xy1MLkIIlAIKuD9-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-34" value="线程池中执行方法" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KX0J2xy1MLkIIlAIKuD9-33">
+          <mxGeometry x="-0.2333" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-16" value="ConsumeMessageOrderlyService" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="980" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-17" value="ConsumeMessageConcurrentlyService" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="980" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-22" value="1.两个对象都是设置一些值&lt;br&gt;2.设置了一些线程池" style="shape=card;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-450" y="760" width="340" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-23" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.477;entryY=1.015;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-16" target="KX0J2xy1MLkIIlAIKuD9-22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-100" y="980" as="sourcePoint" />
+            <mxPoint x="-50" y="930" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-50" y="980" />
+              <mxPoint x="-100" y="930" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-24" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.894;entryY=1.005;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;dashed=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-17" target="KX0J2xy1MLkIIlAIKuD9-22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="1030" as="sourcePoint" />
+            <mxPoint x="230" y="980" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="220" y="920" />
+              <mxPoint x="180" y="980" />
+              <mxPoint x="-100" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=12 12;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-26" target="KX0J2xy1MLkIIlAIKuD9-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-26" value="cleanExpireMsg（清理过期消息）" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1080" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-32" value="&amp;nbsp; ConsumeMessageOrderlyService.this.lockMQPeriodically();" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-92.5" y="1060" width="335" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-35" target="KX0J2xy1MLkIIlAIKuD9-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-35" value="pullMessage(final PullRequest pullRequest)" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="707.5" y="792.5" width="255" height="47.5" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-37" value="拉取消息&lt;br&gt;consumer端拉取消息的方式" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.oval_callout" vertex="1" parent="1">
+          <mxGeometry x="930" y="730" width="130" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-38" target="KX0J2xy1MLkIIlAIKuD9-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-38" target="KX0J2xy1MLkIIlAIKuD9-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-38" target="KX0J2xy1MLkIIlAIKuD9-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-38" target="KX0J2xy1MLkIIlAIKuD9-47">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1170" y="870" />
+              <mxPoint x="1023" y="870" />
+              <mxPoint x="1023" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-38" value="PullRequest" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="786.25" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-40" value="会在客户端维护一个PullRequestQueue&lt;br&gt;的阻塞队列LinkedBlockIngQueue&lt;br&gt;&lt;br&gt;每个节点是一个pullRequest&lt;br&gt;代表了一个消费的分组单元" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.oval_callout" vertex="1" parent="1">
+          <mxGeometry x="1220" y="660" width="270" height="125.5" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-41" value="&lt;div&gt;&amp;nbsp; &amp;nbsp; private String consumerGroup;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; private MessageQueue messageQueue;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; private ProcessQueue processQueue;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; private long nextOffset;&lt;/div&gt;&lt;div&gt;、&lt;/div&gt;&lt;div&gt;pullRequest会记录一个topic对应&lt;/div&gt;&lt;div&gt;的ConsumerGroup拉取进度，&lt;/div&gt;&lt;div&gt;包括MessageQueue和ProcessQueue，&lt;/div&gt;&lt;div&gt;还有拉取的offset&lt;/div&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="785" width="260" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-43" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;messageQueue&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="930" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-45" value="元数据信息" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.oval_callout" vertex="1" parent="1">
+          <mxGeometry x="1230" y="890" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-51" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-47" target="KX0J2xy1MLkIIlAIKuD9-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-47" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;messageQueue&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="880" y="970" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-49" value="一次拉取之后的实际的消息体，拉取相关信息的快照" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.oval_callout" vertex="1" parent="1">
+          <mxGeometry x="890" y="880" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-54" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-50" target="KX0J2xy1MLkIIlAIKuD9-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-50" value="isLockExpired&lt;br&gt;顺序消费的时候使用，消费之前会判断一下processQueue锁定的时间是否超过阈值&lt;br&gt;如果没有超过，代表还是持有锁" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="795" y="1060" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-57" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-53" target="KX0J2xy1MLkIIlAIKuD9-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-69" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-53" target="KX0J2xy1MLkIIlAIKuD9-68">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-53" value="清理过期消息" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-59" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-56" target="KX0J2xy1MLkIIlAIKuD9-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-56" value="是否是顺序消费，顺序消费不清理" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="1140" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-58" target="KX0J2xy1MLkIIlAIKuD9-60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-58" value="每次处理16条过期消息" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1206" y="1145" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-60" target="KX0J2xy1MLkIIlAIKuD9-62">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-65" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-60" target="KX0J2xy1MLkIIlAIKuD9-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-60" value="一次for循环执行两次try" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1315" y="1140" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-62" value="给msg赋值" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1351" y="1020" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-67" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-64" target="KX0J2xy1MLkIIlAIKuD9-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-64" value="把msg发回broker&lt;br&gt;把延迟设置为3" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1431" y="1140" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-66" value="移除消息" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="1140" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-71" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-68" target="KX0J2xy1MLkIIlAIKuD9-70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-68" value="pullMessage初始化属性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1240" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-73" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KX0J2xy1MLkIIlAIKuD9-70" target="KX0J2xy1MLkIIlAIKuD9-72">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-70" value="getMaxSpan&lt;br&gt;队列中的最大间隔&lt;br&gt;记录已拉取消息的偏移量" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="865" y="1320" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KX0J2xy1MLkIIlAIKuD9-72" value="removeMessage&lt;br&gt;从msgTreeMap中移除消息" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="865" y="1420" width="150" height="45" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

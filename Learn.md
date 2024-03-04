@@ -37,7 +37,7 @@
 #### 监督学习（分类和回归）
 给机器的训练数据标记和答案叫做监督学习，有x和y 称为监督学习
 #### 非监督学习
-给机器没有任何答案和标记，对没有标记的数据进行分类-聚类分类
+    给机器没有任何答案和标记，对没有标记的数据进行分类-聚类分类
 意义：对数据进行降维处理 特征提取：信用卡的信用评级和人的胖瘦无关 特征压缩：pca 方便可视化
 异常检测
 #### 半监督学习
@@ -106,7 +106,7 @@
 - k近邻算法是非常特殊的，可以被认为是没有模型的算法
 - 围栏和其他算法统一，可以认为训练数据集就是模型本身
 - from sklean.neighbors import KNeighborsClassfier
-- from sklean.model_selection import train_test_split
+- from sklearn.linear_model import SGDRegressor
 - from sklean.metrics import accuracy_score
 #### 超参数
 - 概念：在算法运行前需要决定的参数 
@@ -150,26 +150,35 @@ grid_search.best_params_ 最好的参数
 - 使用Xcale 适用于分布有明显边界的情况下，受outlier影响较大 分数分值 和 图像像素的情况下
 - 均值方差归一化(改进方案) standerdization 把所有数据归一到均值为0方差为1的分布中 适用于（数据分布没有明显的边界；有可能存在极端数据值） 
     （每个特征值 - 每个特征值的均值）/对应特征值的方
-##### 缺点
+  from sklearn.preprocessing import StandardScalar
+  standardScalar = StandardScalar()
+##### k近邻算法缺点
 - 效率低下
 - 如果训练集有m个样本，n个特征 则预测每一个新的数据，需要O(M*N) 
 - 高度数据相关
 - 预测结果不具有可解释性
-- 维数灾难
+- 维数灾难 多维特征不适合 多维情况下可以降维
 ### 线性回归
 - 通过分析问题,确定问题的损失函数或者效用函数;通过最优化损失函数或者效用函数，获得机器学习的模型
 - 可以使用最优化原理和凸优化原理（需要自己学习）
+- J(a,b)代表损失函数，求一个一次方程的最小值 就是对方程求导=0
 #### 回归算法的评价
 - 均方误差MSE
-- 均方根误差RMSE
+- 均方根误差RMSE 就是MSE开根号
 - 平均绝对误差MAE
-- R squared
+  - from sklearn.metrics import mean_squared_error 使用方法 mean_squared_error(y_test,y_predict)
+  - from sklearn.metrics import mean_absolute_error  mean_absolute_error(y_test,y_predict)
+- R squared(sklearn 内置的 评价方法)
 - - R**2 <=1
+    - R**2 = 1 - 使用我们的模型预测产生的错误/使用均值产生的错误（baseline Model）
 - - 越大越好。当我们的预测模型不犯任何错误事，r方得到的最大值1
 - - 当我们的模型等于基准模型时,r方为0
 - - 如果r方<0，说明我们学习到的模型还不如基准模型。此时，很有可能我们的数据不存在任何性关系
 ### 多项式回归
 - 增加特征值的操作
+- 求解多元0 是指的多元线性回归的正规方程解 -> 时间复杂度高 是O(N^3)
+- 多项式回归不需要对数据进行归一化处理 
+  - from sklearn.linear_model import LinearRegression
 - 识别欠拟合和过拟合（泛化能力）
 - - 使用测试和训练数据集
 - 学习曲线
@@ -178,6 +187,7 @@ grid_search.best_params_ 最好的参数
 - - 训练数据集 验证数据集（评判，调整超参数使用的数据集） 测试数据集
 - - 交叉验证(k-folds) 留一法(LOO-CV)
 ### 梯度下降
+- 使用梯度下降法 不一定是之前的目标函数 有可能会变
 - 不是一个机器学习算法
 - 是一种基于搜索的最优化方法
 - 作用：最小化一个损失函数
@@ -187,12 +197,41 @@ grid_search.best_params_ 最好的参数
 - n的取值不合适，甚至得不到最优解
 - n是梯度下降法的一个超参数
 - - 优势
+- scikit-learn中的SGD(随机梯度下降法)
+from sklearn.linear_model import SGDRegressor
+- 梯度的调试  
 ### 模型正则化
 ### PCA（降维）
 - 一个非监督的机器算法
 - 主要用于数据的降维
 - 通过降维，可以发现更便于人类理解的特征
 - 其他应用：可视化；去噪
+from sklearn.decomposition import PCA
+pca  = PCA(n_components=1)
+pca.fit(x)
+pca.transform(x)
+  
+### 多项式回归
+- 为原来的样本数据增加了新的样本列
+- 基于线性回归的算法 解决非线性问题 
+- from sklearn.preprocessing import PolynomialFeatures
+- poly = PolynomialFeatures(degree=2) 添加多少次的样本
+- poly.fit(x)
+- poly.transform(x)
+### PolynomialFeatures
+- 注意 如果有x1、x2特征 那么就会有1,x1,x2,x1^2 x1*x2 x2^2 六列特征
+### Pipeline
+from sklearn.pipline import Pipeline
+from sklearn.preprocessing import StandardScaler
+
+poly_reg = Pipline([
+    ('poly', PolynomialFeatures(degree=2)),
+    ('std_scaler',StandardScaler()),
+    ('lin_reg',LinearRegression())
+])
+### 交叉验证
+from sklearn.model_selection import cross_val_score
+把训练集分成K份 称为 k-folds cross validation
 ### 模型误差
 - 偏差+方差+不可避免的误差 = 模型误差
 - 导致偏差的主要原因：对问题的本身的假设不正确！如：非线性数据使用线性回归
@@ -212,7 +251,10 @@ grid_search.best_params_ 最好的参数
 - - 模型正则化
 ####岭回归(模型正则化)
 ####LASSO Regression(可以用特征选择用)
+- LASSO趋向于使得一部分theta值变为0.所以可作为特征选择用
 #### 弹性网
+L1正则项->LASSO
+Ridge正则项->岭回归 L2正则项
 ### 逻辑回归
 - 解决分类问题
 - 通过预测的概率值来判断是否符合分类
@@ -220,6 +262,8 @@ grid_search.best_params_ 最好的参数
 - Sigmoid函数
 ### 决策边界
 - 不规则的决策边界的绘制方法
+### 逻辑回归使用正则化
+from sklearn.linear_model import LogisticRegression
 ### OVR(ONE VS REST)  
 from sklearn.multiclass import OneVsRestClassifier
 ### OVO(ONE VS ONE)
@@ -233,7 +277,8 @@ from sklearn.multiclass import OneVsOneClassifier
 - - from sklearn.metrics import precision_score
 - 召回率(recall= TP/TP+FN)真实的发生了预测发生了多少个 病人预测
 - - from sklearn.metrics import recall_score
-- F1 Score 两者都兼得 平常使用
+- F1 Score 两者都兼得 平常使
+- pr曲线
 - ROC曲线
 - - FPR = FP/TN+FP  TPR = TP/FN+TP
 ### SVM(support vector machine)
@@ -293,7 +338,11 @@ voting_clf= VotingClassifier(estimators=[
 ### 随机树林
 - 决策树在节点划分上，在随机的特征子集寻找最优划分特征
 ### Ada Boosting
-### Gradient Boosting 
-### Stad
+- from sklearn.ensemble import AdaBoostClassifier
+### Gradient Boosting
+- from sklearn.ensemble import GradientBoostingClassifier
+- - 解决回归问题
+    from sklearn.ensemble import GradientBoostingRegressor
+### Stacking
 ### 模型选择
 ### 模型调整
